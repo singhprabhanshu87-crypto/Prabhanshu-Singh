@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabhanshu Singh | Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#070b1a;
+      color:#eef2ff;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      overflow:hidden;
+    }
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(90px);
+      opacity:.28;
+      animation:float 14s ease-in-out infinite;
+    }
+    .orb1{width:320px;height:320px;background:#2563eb;top:-60px;left:-40px}
+    .orb2{width:260px;height:260px;background:#06b6d4;right:-40px;top:140px;animation-delay:3s}
+    .orb3{width:340px;height:340px;background:#7c3aed;bottom:-100px;left:35%;animation-delay:6s}
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) translateX(0)}
+      50%{transform:translateY(30px) translateX(15px)}
+    }
+
+    .container{width:min(1120px,92%);margin:auto}
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:40px 0;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      width:100%;
+      align-items:center;
+    }
+
+    .hero-left{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:32px;
+      padding:42px;
+      backdrop-filter:blur(18px);
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(37,99,235,.18);
+      border:1px solid rgba(96,165,250,.35);
+      color:#bfdbfe;
+      font-size:.92rem;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(2.8rem,6vw,5.2rem);
+      line-height:1.02;
+      margin-bottom:16px;
+      font-weight:800;
+      letter-spacing:-0.03em;
+    }
+
+    .name{
+      background:linear-gradient(135deg,#ffffff,#93c5fd,#67e8f9);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .subtitle{
+      color:#7dd3fc;
+      font-weight:600;
+      margin-bottom:18px;
+      font-size:1.08rem;
+    }
+
+    .hero-left p{
+      color:#dbe4ff;
+      margin-bottom:28px;
+      max-width:640px;
+    }
+
+    .btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:26px;
+    }
+
+    .btn{
+      text-decoration:none;
+      color:white;
+      padding:13px 20px;
+      border-radius:16px;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(135deg,#2563eb,#06b6d4);
+      box-shadow:0 10px 24px rgba(37,99,235,.28);
+      transition:.25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 14px 32px rgba(37,99,235,.38);
+    }
+
+    .btn:active{transform:scale(.96)}
+
+    .mini{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .mini-card{
+      flex:1 1 150px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:18px;
+      text-align:center;
+    }
+
+    .mini-card h3{
+      color:#67e8f9;
+      font-size:1.7rem;
+      margin-bottom:4px;
+    }
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+    }
+
+    .profile{
+      width:min(380px,100%);
+      aspect-ratio:1;
+      border-radius:36px;
+      background:linear-gradient(135deg,#111827,#0f172a);
+      border:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+    }
+
+    .profile::before{
+      content:'';
+      position:absolute;
+      inset:-20%;
+      background:conic-gradient(from 0deg,#2563eb,#06b6d4,#7c3aed,#2563eb);
+      animation:spin 8s linear infinite;
+      opacity:.45;
+    }
+
+    .profile::after{
+      content:'';
+      position:absolute;
+      inset:10px;
+      border-radius:28px;
+      background:#0b1020;
+    }
+
+    .emoji{
+      position:relative;
+      z-index:1;
+      font-size:6rem;
+    }
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    section{padding:88px 0}
+
+    .section-title{
+      font-size:2rem;
+      margin-bottom:28px;
+      text-align:center;
+      background:linear-gradient(135deg,#fff,#93c5fd,#67e8f9);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .glass{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      backdrop-filter:blur(14px);
+      box-shadow:0 18px 40px rgba(0,0,0,.28);
+    }
+
+    .about{padding:34px}
+    .about ul{margin-top:16px;padding-left:20px}
+    .about li{margin:10px 0;color:#dbe4ff}
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .skill-card{
+      padding:24px;
+      transition:.3s ease;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(103,232,249,.5);
+    }
+
+    .skill-card h3{
+      margin-bottom:16px;
+      color:#fff;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .chips span{
+      padding:8px 14px;
+      border-radius:999px;
+      background:#111827;
+      border:1px solid rgba(255,255,255,.08);
+      color:#a5f3fc;
+      font-size:.92rem;
+    }
+
+    .project{
+      padding:34px;
+      background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(6,182,212,.10));
+    }
+
+    .project h3{
+      font-size:1.5rem;
+      margin-bottom:12px;
+    }
+
+    .project ul{
+      margin:18px 0 22px;
+      padding-left:20px;
+    }
+
+    .project li{margin:8px 0}
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+
+    .stat-card{
+      padding:28px 20px;
+      text-align:center;
+      min-height:170px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .stat-card strong{
+      font-size:2.5rem;
+      color:#67e8f9;
+      line-height:1;
+    }
+
+    .stat-card span{
+      color:#dbe4ff;
+      font-size:1rem;
+    }
+
+    .contact{
+      padding:34px;
+      text-align:center;
+    }
+
+    .contact p{margin:10px 0;color:#dbe4ff}
+
+    .contact a{
+      color:#67e8f9;
+      text-decoration:none;
+    }
+
+    .contact a:hover{text-decoration:underline}
+
+    .motto{
+      text-align:center;
+      padding:34px;
+      font-size:1.28rem;
+      font-weight:700;
+      background:linear-gradient(135deg,rgba(37,99,235,.16),rgba(6,182,212,.12));
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 20px 40px;
+      color:#94a3b8;
+      font-size:.95rem;
+    }
+
+    @media (max-width:900px){
+      .hero-wrap{grid-template-columns:1fr}
+      .hero-right{order:-1}
+      .profile{max-width:280px}
+    }
+
+    @media (max-width:600px){
+      .hero-left{padding:28px 22px}
+      .btn{width:100%;justify-content:center}
+      .mini{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-wrap">
+
+          <div class="hero-left">
+
+            <div class="tag">✨ Available for internships & projects</div>
+
+            <h1>Hi, I’m <span class="name">Prabhanshu Singh</span></h1>
+
+            <div class="subtitle">Aspiring Software Developer • Problem Solver • Tech Enthusiast</div>
+
+            <p>
+              I enjoy building modern web applications, solving coding problems,
+              and continuously improving my skills in <strong>DSA</strong>,
+              <strong>Full-Stack Development</strong>, and <strong>Open Source</strong>.
+            </p>
+
+            <div class="btns">
+
+              <a class="btn"
+                 href="https://github.com/singhprabhanshu87-crypto"
+                 target="_blank"
+                 rel="noopener noreferrer">🐙 GitHub</a>
+
+              <a class="btn"
+                 href="https://www.linkedin.com/in/prabhanshu-singh-590656372/"
+                 target="_blank"
+                 rel="noopener noreferrer">💼 LinkedIn</a>
+
+              <a class="btn"
+                 href="https://leetcode.com/u/prabhu2706/"
+                 target="_blank"
+                 rel="noopener noreferrer">💻 LeetCode</a>
+
+              <a class="btn"
+                 href="mailto:Singhprabhanshu87@gmail.com">📧 Email</a>
+
+            </div>
+
+            <div class="mini">
+
+              <div class="mini-card">
+                <h3>2nd</h3>
+                <p>Year Student</p>
+              </div>
+
+              <div class="mini-card">
+                <h3>3+</h3>
+                <p>Tech Domains</p>
+              </div>
+
+              <div class="mini-card">
+                <h3>∞</h3>
+                <p>Learning Mindset</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="hero-right">
+
+            <div class="profile">
+              <div class="emoji">👨‍💻</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="glass about">
+
+          <p>
+            I’m passionate about software development, problem solving,
+            and creating projects that improve my technical skills and creativity.
+          </p>
+
+          <ul>
+            <li>🌱 Learning <strong>Data Structures & Algorithms</strong> and <strong>Full-Stack Web Development</strong></li>
+            <li>💡 Interested in <strong>Web Development, Software Engineering, and Open Source</strong></li>
+            <li>🚀 Love building practical, real-world projects</li>
+            <li>📚 Continuously learning and improving every day</li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+
+        <div class="skills-grid">
+
+          <div class="glass skill-card">
+            <h3>Programming</h3>
+            <div class="chips">
+              <span>C++</span>
+              <span>Java</span>
+              <span>Python</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="glass skill-card">
+            <h3>Frontend</h3>
+            <div class="chips">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>React.js</span>
+            </div>
+          </div>
+
+          <div class="glass skill-card">
+            <h3>Backend</h3>
+            <div class="chips">
+              <span>Node.js</span>
+              <span>Express.js</span>
+            </div>
+          </div>
+
+          <div class="glass skill-card">
+            <h3>Database</h3>
+            <div class="chips">
+              <span>MongoDB</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="container">
+        <h2 class="section-title">Featured Project</h2>
+
+        <div class="glass project">
+
+          <h3>🛒 E-Commerce Web Project</h3>
+
+          <p>
+            A responsive shopping website with a modern interface, product cards,
+            navigation, and interactive user experience features.
+          </p>
+
+          <ul>
+            <li>Responsive layout</li>
+            <li>Product listing UI</li>
+            <li>Interactive components</li>
+            <li>Modern design system</li>
+          </ul>
+
+          <p><strong>Technologies Used:</strong> HTML5 • CSS3 • JavaScript</p>
+
+          <a class="btn"
+             href="https://github.com/singhprabhanshu87-crypto/Prabhanshu-Singh"
+             target="_blank"
+             rel="noopener noreferrer">🔗 View E-Commerce Repository</a>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="stats">
+      <div class="container">
+        <h2 class="section-title">GitHub Stats</h2>
+
+        <div class="stats-grid">
+          <div class="glass stat-card">
+            <strong>100+</strong>
+            <span>Hours of learning</span>
+          </div>
+
+          <div class="glass stat-card">
+            <strong>3+</strong>
+            <span>Core tech domains</span>
+          </div>
+
+          <div class="glass stat-card">
+            <strong>∞</strong>
+            <span>Curiosity and growth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Connect With Me</h2>
+
+        <div class="glass contact">
+
+          <p>📧 <strong>Singhprabhanshu87@gmail.com</strong></p>
+
+          <p>🐙 <a href="https://github.com/singhprabhanshu87-crypto" target="_blank" rel="noopener noreferrer">github.com/singhprabhanshu87-crypto</a></p>
+
+          <p>💼 <a href="https://www.linkedin.com/in/prabhanshu-singh-590656372/" target="_blank" rel="noopener noreferrer">linkedin.com/in/prabhanshu-singh-590656372</a></p>
+
+          <p>💻 <a href="https://leetcode.com/u/prabhu2706/" target="_blank" rel="noopener noreferrer">leetcode.com/u/prabhu2706</a></p>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="glass motto">
+          ✨ “Learn • Build • Share • Grow”
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    ⭐ Thanks for visiting my portfolio. Let’s connect and build something amazing!
+  </footer>
+
+</body>
+</html>
